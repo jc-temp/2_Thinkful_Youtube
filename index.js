@@ -7,7 +7,9 @@ $("#youtubesearch").on('submit', (event)=>{
     type:'GET',
     dataType: 'json',
     success: (data) => {
-      console.log(data)
+      for(const item of data.items) {
+        console.log(item.snippet)
+      }
     },
     data:{
       part: 'snippet',
