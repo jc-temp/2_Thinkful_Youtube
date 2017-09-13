@@ -9,6 +9,7 @@ $("#youtubesearch").on('submit', (event)=>{
     success: (data) => {
       for(const item of data.items) {
         console.log(item.snippet)
+        displayResults(item.snippet)
       }
     },
     data:{
@@ -17,12 +18,14 @@ $("#youtubesearch").on('submit', (event)=>{
       q: $('#q').val()
 
     }
-
-
   }
-
   $.ajax(settings)
+}
+)
+
+const displayResults = (result) => {
+  $('#results').html(`
+      <img id="questionImage" src="${result.thumbnails}" alt="${result.videoID}">
+    `)
 
 }
-
-)
