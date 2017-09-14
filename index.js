@@ -1,6 +1,7 @@
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search'
 
 $("#youtubesearch").on('submit', (event)=>{
+  $('#results').html('')
   event.preventDefault()
   $('#results').html('')
   const settings = {
@@ -9,8 +10,8 @@ $("#youtubesearch").on('submit', (event)=>{
     dataType: 'json',
     success: (data) => {
       for(const item of data.items) {
-        console.log(item.snippet)
-        displayResults(item.snippet)
+        //console.log(item.snippet)
+        displayResults(item.snippet, item.id)
       }
     },
     data:{
@@ -24,14 +25,14 @@ $("#youtubesearch").on('submit', (event)=>{
 }
 )
 
-const displayResults = (result) => {
+const displayResults = (resultsSnippet, resultsID) => {
+  console.log(resultsID.videoId)
   $('#results').append(`
-      <img id="questionImage" src="${result.thumbnails.medium.url}" alt="${result.description}">
-      <p>${result.title}</p>
+      <a href="https://www.youtube.com/watch?v=${resultsID.videoId}">
+      <img id="questionImage" src="${resultsSnippet.thumbnails.medium.url}" alt="${resultsSnippet.description}"></a>
+      <p>${resultsSnippet.title}</p>
     `)
 }
-
-
 
 
 //clear upon new submission
