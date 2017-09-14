@@ -30,7 +30,7 @@ const displayResults = (resultsSnippet, resultsID) => {
   $('#results').append(`
       <a href="https://www.youtube.com/watch?v=${resultsID.videoId}">
       <img id="questionImage" src="${resultsSnippet.thumbnails.medium.url}" alt="${resultsSnippet.description}"></a>
-      <p>${resultsSnippet.title}</p>
+      <p>${resultsSnippet.title}: <a href='https://www.youtube.com/channel/${resultsID.channelId}'> more this from channel..</</p>
     `)
 }
 
