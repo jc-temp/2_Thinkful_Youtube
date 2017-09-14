@@ -24,8 +24,8 @@ $("#youtubesearch").on('submit', (event)=>{
 )
 
 const displayResults = (result) => {
-  $('#results').html(`
-      <img id="questionImage" src="${result.thumbnails}" alt="${result.videoID}">
+  $('#results').append(`
+      <img id="questionImage" src="${result.thumbnails.medium.url}" alt="${result.description}">
+      <p>${result.title}</p>
     `)
-
 }
