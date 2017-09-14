@@ -26,7 +26,7 @@ $("#youtubesearch").on('submit', (event)=>{
 )
 
 const displayResults = (resultsSnippet, resultsID) => {
-  console.log(resultsID.videoId)
+  console.log(resultsID.channelId)
   $('#results').append(`
       <a href="https://www.youtube.com/watch?v=${resultsID.videoId}">
       <img id="questionImage" src="${resultsSnippet.thumbnails.medium.url}" alt="${resultsSnippet.description}"></a>
