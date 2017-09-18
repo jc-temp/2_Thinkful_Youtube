@@ -11,7 +11,8 @@ $("#youtubesearch").on('submit', (event)=>{
     success: (data) => {
       for(const item of data.items) {
         //console.log(item.snippet)
-        displayResults(item.snippet, item.id)
+        displayResults(item)
+        //fix call to item only
       }
     },
     data:{
@@ -25,18 +26,28 @@ $("#youtubesearch").on('submit', (event)=>{
 }
 )
 
-const displayResults = (resultsSnippet, resultsID) => {
-  console.log(resultsID.channelId)
+const displayResults = (results) => {
+  console.log(results.nextPageToken)
   $('#results').append(`
-      <a href="https://www.youtube.com/watch?v=${resultsID.videoId}">
-      <img id="questionImage" src="${resultsSnippet.thumbnails.medium.url}" alt="${resultsSnippet.description}"></a>
-      <p>${resultsSnippet.title}: <a href='https://www.youtube.com/channel/${resultsID.channelId}'> more this from channel..</</p>
+      <div class="card">
+        <div class="inner-wrapper">
+          <div>
+            <a href="https://www.youtube.com/watch?v=${results.snippet.videoId}">
+            <img id="questionImage" src="${results.snippet.thumbnails.medium.url}" alt="${results.snippet.description}"></a>
+            <span>${results.snippet.title}: <a href='https://www.youtube.com/channel/${results.id.channelId}'> more this from channel&hellip;</a></span>
+          </div>
+        </div>
+      </div>
     `)
 }
 
+const lightBox = () =>{
 
-//clear upon new submission
-//Make the images clickable, leading the user to the YouTube video, on YouTube
+}
+
+
+
+
+
 //Make the images clickable, playing them in a lightbox
-//Show a link for more from the channel that each video came from
 //Show buttons to get more results (using the previous and next page links from the JSON)
