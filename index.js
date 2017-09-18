@@ -27,12 +27,14 @@ $("#youtubesearch").on('submit', (event)=>{
 )
 
 const displayResults = (results) => {
-  console.log(results.nextPageToken)
+//  console.log(results.nextPageToken)
+  console.log(results.snippet.videoId)
   $('#results').append(`
       <div class="card">
         <div class="inner-wrapper">
           <div>
-            <a href="https://www.youtube.com/watch?v=${results.snippet.videoId}">
+            <a href="https://www.youtube.com/watch?v=${results.id.videoId}">
+            console.log
             <img id="questionImage" src="${results.snippet.thumbnails.medium.url}" alt="${results.snippet.description}"></a>
             <span>${results.snippet.title}: <a href='https://www.youtube.com/channel/${results.id.channelId}'> more this from channel&hellip;</a></span>
           </div>
