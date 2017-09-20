@@ -61,9 +61,15 @@ fieldset{
 			cursor:pointer;
 		}
 
-
-
 iframe{
 	display: block;
 	margin: 10px;
 }
+
+/* focus outline */
+/*.output a:hover,
+.output a:focus,*/
+/*#youtubesearch input:focus,
+#youtubesearch button:focus {
+  outline: 5px dotted salmon;
+}*/
