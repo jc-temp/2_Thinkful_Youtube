@@ -35,7 +35,7 @@ const displayResults = (results) => {
         <div class="inner-wrapper">
           <div>
             <a href="#" id="video${results.id.videoId}">
-              <img id="questionImage" src="${results.snippet.thumbnails.medium.url}" alt="${results.snippet.description}">
+              <img id="questionImage${results.id.videoId}" src="${results.snippet.thumbnails.medium.url}" alt="${results.snippet.description}">
             </a>
             <span>${results.snippet.title}: <a href='https://www.youtube.com/channel/${results.id.channelId}'> more this from channel&hellip;</a></span>
           </div>
