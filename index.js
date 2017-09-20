@@ -37,7 +37,7 @@ const displayResults = (results) => {
             <a href="#" id="video${results.id.videoId}">
               <img id="questionImage${results.id.videoId}" src="${results.snippet.thumbnails.medium.url}" alt="${results.snippet.description}">
             </a>
-            <span>${results.snippet.title}: <a href='https://www.youtube.com/channel/${results.id.channelId}'> more this from channel&hellip;</a></span>
+            <span>${results.snippet.title}: <a href='https://www.youtube.com/channel/${results.snippet.channelId}'> more this from channel&hellip;</a></span>
           </div>
         </div>
       </div>
@@ -57,10 +57,13 @@ const lightBox = (videoId, videoTitle) =>{
           </iframe>
         </div>
       </div>
-  `)
+    `)
+    $('#lightbox').focus()
+    console.log('focus on youtube play button')
     $('#close').on('click', (event) =>{
       $('#lightbox').html('')
-    })
+      }
+      )
   }
   )
 }
