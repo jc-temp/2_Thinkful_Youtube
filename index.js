@@ -42,17 +42,17 @@ const displayResults = (results) => {
         </div>
       </div>
     `)
-    lightBox(results.id.videoId)
+    lightBox(results.id.videoId, results.snippet.title)
 }
 
-const lightBox = (videoId) =>{
+const lightBox = (videoId, videoTitle) =>{
   $(`#video${videoId}`).on('click', (event) => {
     console.log(videoId)
     $('#lightbox').append(`
       <div class="backdrop">
         <div class="videoContainer">
           <a href="#" id="close">x</a>
-          <iframe width="320" height="240"
+          <iframe width="320" height="240" title="${videoTitle}"
           src="https://www.youtube.com/embed/${videoId}">
           </iframe>
         </div>
