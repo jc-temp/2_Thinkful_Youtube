@@ -38,7 +38,7 @@ fieldset{
   left: 33%;
   /*display: none;*/
   position: fixed;
-  background-color: grey;
+  background-color: lightgrey;
   z-index:60;
 }
 .backdrop{
@@ -52,14 +52,16 @@ fieldset{
 	/*display:none;  			*/
 	/*filter:alpha(opacity=0);*/
 }
-.close
+#close
 		{
 			padding:2px;
-			float: right;
+      left: 95%;
 		  position: relative;
 			display: block;
 			cursor:pointer;
 		}
+
+
 
 iframe{
 	display: block;
