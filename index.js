@@ -12,7 +12,6 @@ $("#youtubesearch").on('submit', (event)=>{
       for(const item of data.items) {
         //console.log(item.snippet)
         displayResults(item)
-        //fix call to item only
       }
     },
     data:{
@@ -23,12 +22,14 @@ $("#youtubesearch").on('submit', (event)=>{
     }
   }
   $.ajax(settings)
+  $('#q').val('')
 }
 )
 
 const displayResults = (results) => {
 //  console.log(results.nextPageToken)
   console.log(results.snippet.videoId)
+
   $('#results').append(`
       <div class="card">
         <div class="inner-wrapper">
